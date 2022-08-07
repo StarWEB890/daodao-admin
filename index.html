@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <title>“叨叨点啥”发送页面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <!-- 背景颜色 -->
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <!-- 背景圆 -->
+            <div class="circle" style="--x:0"></div>
+            <div class="circle" style="--x:1"></div>
+            <div class="circle" style="--x:2"></div>
+            <div class="circle" style="--x:3"></div>
+            <div class="circle" style="--x:4"></div>
+            <!-- 登录框 -->
+            <div class="container">
+                <div class="form">
+                    <h2>叨叨发送页面</h2>
+                    <form>
+                        <div class="inputBox">
+                            <input id="api"  type="text" placeholder="api地址" />
+ 
+                        </div>
+                        <div class="inputBox">
+                            <input id="pass"  type="password" placeholder="密码" />
+ 
+                        </div>
+                        <div class="inputBox">
+                            <textarea id="md" rows="5" cols="30" type="text" placeholder="内容" required></textarea>
+ 
+                        </div>
+                        <div class="inputBox">
+                            <input onclick="btn();return false" type="submit" value="点我发送叨叨">
+ 
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p>本页面基于基本HTML+JS，由<a href="https://github.com/StarWEB890">StarInno</a>搭建</p>
+        </div>
+    </section>
+    <script>
+      var api=  document.getElementById("api")//获取api地址
+      var md=  document.getElementById("md") //获取密码
+      var pass=  document.getElementById("pass") //获取密码
+      var get=  document.getElementById("get") //生成地址
+       function btn() {
+        window.location.href = api.value + '/api?c=' + md.value + '&k=' + pass.value;
+       }
+    </script>
+</body>
+</html>
